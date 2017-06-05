@@ -17,20 +17,20 @@ public class Solution {
 		String colors = sc.nextLine();
 		String[] colorsToArray = colors.split(" ");
 
-		TreeMap<Integer, ArrayList<Integer>> edges = new TreeMap();
+		TreeMap<Integer, ArrayList<Integer>> edges = new TreeMap<>();
 		for (int i = 0; i < numberOfNodes - 1; i++) {
 			String[] nextEdge = sc.nextLine().split(" ");
 			int key = Integer.parseInt(nextEdge[0]);
 			int value = Integer.parseInt(nextEdge[1]);
 			if (!edges.containsKey(key)) {
-				edges.put(key, new ArrayList());
+				edges.put(key, new ArrayList<>());
 			}
 			edges.get(key).add(value);
 		}
 		sc.close();
 		Tree root = new TreeNode(Integer.parseInt(valuesToArray[0]),
 				Integer.parseInt(colorsToArray[0]) == 0 ? Color.RED : Color.GREEN, 0);
-		ArrayList<Tree> trees = new ArrayList();
+		ArrayList<Tree> trees = new ArrayList<>();
 		trees.add(root);
 		for (int i = 2; i <= numberOfNodes; i++) {
 			int value = Integer.parseInt(valuesToArray[i - 1]);

@@ -24,7 +24,7 @@ public class VarArgs {
 	}
 	
 	public static void add(int...integers){
-		ArrayList<Integer> integersArgs = new ArrayList();
+		ArrayList<Integer> integersArgs = new ArrayList<>();
 		 for(int integer : integers){
 		        integersArgs.add(integer);
 		    }
