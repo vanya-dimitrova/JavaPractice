@@ -1,4 +1,4 @@
-package challenges;
+package introduction;
 
 import java.text.NumberFormat;
 import java.util.Locale;

@@ -1,8 +1,8 @@
-package challenges;
+package introduction;
 
 import java.util.*;
 
-public class NumberToString {
+public class IntToString {
 
 	public static void main(String[] args) {
 

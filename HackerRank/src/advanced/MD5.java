@@ -1,4 +1,4 @@
-package challenges;
+package advanced;
 
 import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;

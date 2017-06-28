@@ -1,9 +1,9 @@
-package challenges;
+package datastructures;
 
 import java.util.Arrays;
 import java.util.Comparator;
 
-public class ImplementingComparator {
+public class JavaComparator {
 
 	public static void main(String[] args) {
 

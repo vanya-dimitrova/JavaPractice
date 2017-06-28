@@ -1,4 +1,4 @@
-package challenges;
+package introduction;
 
 import java.time.DayOfWeek;
 import java.time.LocalDate;
@@ -7,7 +7,7 @@ import java.time.format.TextStyle;
 import java.util.Locale;
 import java.util.Scanner;
 
-public class DayOfTheWeek {
+public class DateAndTime {
 
 	public static void main(String[] args) {
 		  Scanner in = new Scanner(System.in);

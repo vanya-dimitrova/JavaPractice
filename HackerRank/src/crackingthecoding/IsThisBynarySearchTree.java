@@ -1,7 +1,7 @@
-package challenges;
+package crackingthecoding;
 
 
-public class CheckBynarySearchTree {
+public class IsThisBynarySearchTree {
 	public static void main(String[] args) {
 		// root
 		Node root = new Node();

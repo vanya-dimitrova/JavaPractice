@@ -1,9 +1,9 @@
-package challenges;
+package datastructures;
 
 import java.util.HashSet;
 import java.util.Scanner;
 
-public class UniquePairs {
+public class JavaHashSet {
 
 	public static void main(String[] args) {
 		  Scanner s = new Scanner(System.in);

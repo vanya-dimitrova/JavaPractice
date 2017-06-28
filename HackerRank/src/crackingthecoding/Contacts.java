@@ -1,4 +1,4 @@
-package challenges;
+package crackingthecoding;
 
 import java.util.*;
 
