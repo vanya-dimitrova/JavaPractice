@@ -4,7 +4,8 @@ import java.util.ArrayList;
 import java.util.Scanner;
 import java.util.TreeMap;
 
-import visitorPattern.Tree.Color;
+import visitorPattern.Tree.*;
+import visitorPattern.TreeVis.*;
 
 public class Solution {
 
@@ -12,10 +13,8 @@ public class Solution {
 		Scanner sc = new Scanner(System.in);
 		int numberOfNodes = sc.nextInt();
 		sc.nextLine();
-		String values = sc.nextLine();
-		String[] valuesToArray = values.split(" ");
-		String colors = sc.nextLine();
-		String[] colorsToArray = colors.split(" ");
+		String[] values = sc.nextLine().split(" ");
+		String[] colors = sc.nextLine().split(" ");
 
 		TreeMap<Integer, ArrayList<Integer>> edges = new TreeMap<>();
 		for (int i = 0; i < numberOfNodes - 1; i++) {
@@ -23,26 +22,24 @@ public class Solution {
 			int key = Integer.parseInt(nextEdge[0]);
 			int value = Integer.parseInt(nextEdge[1]);
 			if (!edges.containsKey(key)) {
-				edges.put(key, new ArrayList<>());
+				edges.put(key, new ArrayList<Integer>());
 			}
 			edges.get(key).add(value);
 		}
-		sc.close();
-		Tree root = new TreeNode(Integer.parseInt(valuesToArray[0]),
-				Integer.parseInt(colorsToArray[0]) == 0 ? Color.RED : Color.GREEN, 0);
+		Tree root = new TreeNode(Integer.parseInt(values[0]),Integer.parseInt(colors[0]) == 0 ? Color.RED : Color.GREEN, 0);
 		ArrayList<Tree> trees = new ArrayList<>();
 		trees.add(root);
-		for (int i = 2; i <= numberOfNodes; i++) {
-			int value = Integer.parseInt(valuesToArray[i - 1]);
-			Color color = Integer.parseInt(colorsToArray[i - 1]) == 0 ? Color.RED : Color.GREEN;
+		for (int i = 1; i < numberOfNodes; i++) {
+			int value = Integer.parseInt(values[i]);
+			Color color = Integer.parseInt(colors[i]) == 0 ? Color.RED : Color.GREEN;
 			int depth = 0;;
-			for(int j = i - 1; j > 0; j--){
+			for(int j = i; j > 0; j--){
 				if(edges.containsKey(j)){
 					depth = trees.get(j - 1).getDepth() + 1;
 					break;
 				}
 			}
-			if (edges.containsKey(i)) {
+			if (edges.containsKey(i + 1)) {
 				trees.add(new TreeNode(value, color, depth));
 			} else {
 				trees.add(new TreeLeaf(value, color, depth));
@@ -55,11 +52,9 @@ public class Solution {
 				int treePosition = edges.get(parent).get(i) - 1;
 				node.addChild(trees.get(treePosition));
 			}
-
 		}
-		trees = null;
-		edges = null;
 
+		sc.close();
 		return root;
 
 	}

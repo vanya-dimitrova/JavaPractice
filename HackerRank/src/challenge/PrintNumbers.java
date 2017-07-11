@@ -1,4 +1,4 @@
-package randomchallenge;
+package challenge;
 
 public class PrintNumbers {
 
